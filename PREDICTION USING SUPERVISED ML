@@ -1,0 +1,18 @@
+library(readxl)
+View(Spark_task)
+#convert the data into data frame
+df<-as.data.frame(Spark_task)
+df
+#show plot of the data
+plot(Spark_task$Hours,Spark_task$scores)
+
+#linear regression 
+model<-lm(Spark_task$scores~Spark_task$Hours,data = Spark_task)
+model
+
+#Predicting score if a student for 9.25hrs/day?
+#By putting value of intercept and slope
+
+scores_predict= 2.48 + 9.776*9.25
+scores_predict
+
